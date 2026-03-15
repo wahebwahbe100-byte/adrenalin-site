@@ -18,8 +18,8 @@
 
     .hero-overlay {
       background:
-        linear-gradient(to left, rgba(0, 70, 40, 0.45), rgba(0, 90, 140, 0.30)),
-        linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.25));
+        linear-gradient(to left, rgba(0, 70, 40, 0.42), rgba(0, 90, 140, 0.28)),
+        linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,.20));
     }
 
     .reveal {
@@ -80,6 +80,12 @@
       background-size: 60px 30px;
       background-repeat: repeat-x;
       opacity: 1;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
   </style>
 </head>
@@ -161,7 +167,7 @@
   </header>
 
   <!-- Hero -->
-  <section id="home" class="relative min-h-[85vh] bg-cover bg-center reveal" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');">
+  <section id="home" class="relative min-h-[85vh] bg-cover bg-center reveal" style="background-image:url('images/hero-main.jpg');">
     <div class="hero-overlay absolute inset-0"></div>
     <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-24 md:py-32 min-h-[85vh] flex items-center">
       <div class="max-w-3xl text-white">
@@ -339,7 +345,6 @@
   <!-- Videos -->
   <section id="videos" class="py-24 bg-white reveal">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
-
       <div class="text-center max-w-3xl mx-auto mb-14">
         <p class="text-lime-600 font-bold mb-3">فيديو المغامرات</p>
         <h2 class="text-3xl md:text-5xl font-black">شاهد تجربة المغامرة</h2>
@@ -372,7 +377,6 @@
           </a>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -537,17 +541,48 @@
   <!-- Contact -->
   <section id="contact" class="py-24 bg-gray-50 reveal">
     <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10 items-start">
+      
+      <!-- Contact Info -->
       <div>
         <p class="text-lime-600 font-bold mb-3">تواصل معنا</p>
         <h2 class="text-3xl md:text-5xl font-black">احجز جولتك أو اطلب عرضًا خاصًا</h2>
-        <p class="mt-6 text-gray-600 leading-8 text-lg">اكتب لنا تفاصيل رحلتك أو عدد المشاركين أو نوع الفعالية، وسنعود إليك بعرض مناسب في أسرع وقت.</p>
-        <div class="mt-8 space-y-4 text-gray-700">
+        <p class="mt-6 text-gray-600 leading-8 text-lg">
+          اكتب لنا تفاصيل رحلتك أو عدد المشاركين أو نوع الفعالية، وسنعود إليك بعرض مناسب في أسرع وقت.
+        </p>
+
+        <div class="mt-8 space-y-4 text-gray-700 text-lg">
           <div><strong>البريد:</strong> info@adrenalinbecker.de</div>
           <div><strong>الهاتف:</strong> +49 15253849953</div>
-          <div><strong>العنوان:</strong> Schwarzwald, Germany</div>
+          <div><strong>العنوان:</strong> Magnolienstraße 7, 76287 Rheinstetten</div>
+        </div>
+
+        <!-- Map Card -->
+        <div class="mt-10 bg-white rounded-[2rem] shadow-xl border border-gray-200 overflow-hidden">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-black text-gray-900">Adrenalin Becker</h3>
+                <p class="text-gray-600 mt-2">Magnolienstraße 7, 76287 Rheinstetten</p>
+              </div>
+              <div class="text-left">
+                <div class="text-2xl font-black text-lime-600">4,8</div>
+                <div class="text-yellow-500 text-lg">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-wrap h-[340px]">
+            <iframe
+              src="https://www.google.com/maps?q=Magnolienstraße%207,%2076287%20Rheinstetten&z=15&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
 
+      <!-- Contact Form -->
       <form class="bg-white rounded-[2rem] shadow-xl p-6 md:p-8 border border-gray-100 grid gap-4 card-hover">
         <div class="grid md:grid-cols-2 gap-4">
           <input type="text" placeholder="الاسم الكامل" class="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 outline-none focus:border-lime-500">
@@ -570,6 +605,7 @@
         <textarea rows="6" placeholder="اكتب تفاصيل طلبك هنا" class="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 outline-none focus:border-lime-500"></textarea>
         <button type="submit" class="bg-lime-500 hover:bg-lime-600 text-white font-black px-6 py-4 rounded-2xl transition">إرسال الطلب</button>
       </form>
+
     </div>
   </section>
 
@@ -627,14 +663,12 @@
 
       <div class="border-t border-gray-200 pt-5 flex flex-col md:flex-row items-center justify-center gap-3 text-gray-600">
         <span>تم التصميم بواسطة</span>
-
         <a href="https://wahebwahbe100-byte.github.io/my-website/" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 hover:text-lime-600 transition font-semibold">
           <img src="logo.png" alt="waheb site logo" class="w-6 h-6 object-contain rounded-md">
           <span>waheb site</span>
         </a>
       </div>
-
     </div>
   </footer>
 
