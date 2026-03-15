@@ -1,201 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AdrenalinBecker</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventure Becker | موقع رحلات ومغامرات</title>
+  <meta name="description" content="موقع احترافي لرحلات المغامرات والفعاليات الجماعية والتخييم والجولات الخارجية مع تصميم حديث وقائمة منسدلة." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    .hero-overlay { background: linear-gradient(to left, rgba(0,0,0,.75), rgba(0,0,0,.45)); }
+  </style>
 </head>
+<body class="bg-white text-gray-900">
 
-<body class="bg-black text-white font-sans">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between h-24 gap-4">
+        <a href="#home" class="flex items-center gap-3 shrink-0">
+          <div class="w-12 h-12 rounded-2xl bg-lime-500 text-white flex items-center justify-center text-xl font-black shadow">A</div>
+          <div>
+            <div class="text-xl font-black leading-none">Adventure Becker</div>
+            <div class="text-xs text-gray-500 mt-1">رحلات ومغامرات وفعاليات جماعية</div>
+          </div>
+        </a>
 
-<header class="bg-black/80 border-b border-white/10">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="hidden lg:flex items-center gap-1 text-[17px]">
+          <div class="relative group">
+            <a href="#tours" class="inline-flex items-center px-5 py-4 rounded-xl bg-lime-500 text-white font-bold hover:bg-lime-600 transition">
+              الدورات والجولات
+            </a>
+            <div class="absolute right-0 top-full mt-2 w-80 rounded-2xl overflow-hidden bg-green-600 text-white shadow-2xl opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition duration-200">
+              <a href="#tour-canyoning" class="block px-6 py-4 hover:bg-green-700 border-b border-green-700">Canyoning</a>
+              <a href="#tour-kayak" class="block px-6 py-4 hover:bg-green-700 border-b border-green-700">Kanutouren</a>
+              <a href="#tour-camping" class="block px-6 py-4 hover:bg-green-700 border-b border-green-700">Baumzeltübernachtung</a>
+              <a href="#tour-bachelor" class="block px-6 py-4 hover:bg-green-700 border-b border-green-700">Junggesellenabschied</a>
+              <a href="#tour-winter" class="block px-6 py-4 hover:bg-green-700 border-b border-green-700">Schneeschuhwanderungen</a>
+              <a href="#tour-airboarding" class="block px-6 py-4 hover:bg-green-700 border-b border-green-700">Airboarding</a>
+              <a href="#tour-weekend" class="block px-6 py-4 hover:bg-green-700">Abenteuerwochenende</a>
+            </div>
+          </div>
 
-<div>
-<h1 class="text-xl font-bold">AdrenalinBecker</h1>
-<p class="text-xs text-gray-400">Outdoor Abenteuer im Schwarzwald</p>
-</div>
+          <a href="#business" class="px-4 py-4 rounded-xl hover:text-lime-600 transition">فعاليات الشركات</a>
+          <a href="#videos" class="px-4 py-4 rounded-xl hover:text-lime-600 transition">فيديو</a>
+          <a href="#rental" class="px-4 py-4 rounded-xl hover:text-lime-600 transition">التأجير</a>
+          <a href="#about" class="px-4 py-4 rounded-xl hover:text-lime-600 transition">من نحن</a>
+          <a href="#gift" class="px-5 py-4 rounded-xl bg-lime-500 text-white font-bold hover:bg-lime-600 transition">قسيمة</a>
+          <a href="#terms" class="px-4 py-4 rounded-xl hover:text-lime-600 transition">الشروط</a>
+          <a href="#contact" class="px-4 py-4 rounded-xl hover:text-lime-600 transition">تواصل</a>
+        </nav>
 
-<nav class="hidden md:flex gap-6 text-sm">
-<a href="#activities">Aktivitäten</a>
-<a href="#business">Firmenevents</a>
-<a href="#reviews">Bewertungen</a>
-<a href="#contact">Kontakt</a>
-</nav>
+        <button id="menuBtn" class="lg:hidden text-3xl px-3 py-2 rounded-xl border border-gray-200">☰</button>
+      </div>
+    </div>
 
-<a href="#contact" class="bg-lime-500 text-black px-4 py-2 rounded-xl font-bold">
-Jetzt anfragen
-</a>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-5 space-y-3">
+        <details class="rounded-2xl overflow-hidden border border-gray-200">
+          <summary class="cursor-pointer list-none bg-lime-500 text-white font-bold px-4 py-4">الدورات والجولات</summary>
+          <div class="bg-green-600 text-white">
+            <a href="#tour-canyoning" class="block px-4 py-3 border-b border-green-700">Canyoning</a>
+            <a href="#tour-kayak" class="block px-4 py-3 border-b border-green-700">Kanutouren</a>
+            <a href="#tour-camping" class="block px-4 py-3 border-b border-green-700">Baumzeltübernachtung</a>
+            <a href="#tour-bachelor" class="block px-4 py-3 border-b border-green-700">Junggesellenabschied</a>
+            <a href="#tour-winter" class="block px-4 py-3 border-b border-green-700">Schneeschuhwanderungen</a>
+            <a href="#tour-airboarding" class="block px-4 py-3 border-b border-green-700">Airboarding</a>
+            <a href="#tour-weekend" class="block px-4 py-3">Abenteuerwochenende</a>
+          </div>
+        </details>
+        <a href="#business" class="block py-2">فعاليات الشركات</a>
+        <a href="#videos" class="block py-2">فيديو</a>
+        <a href="#rental" class="block py-2">التأجير</a>
+        <a href="#about" class="block py-2">من نحن</a>
+        <a href="#gift" class="block py-2">قسيمة</a>
+        <a href="#terms" class="block py-2">الشروط</a>
+        <a href="#contact" class="block py-2">تواصل</a>
+      </div>
+    </div>
+  </header>
 
-</div>
-</header>
+  <!-- Hero -->
+  <section id="home" class="relative min-h-[85vh] bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-24 md:py-32 min-h-[85vh] flex items-center">
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-4 py-2 mb-6 text-sm">
+          <span>رحلات احترافية</span>
+          <span class="w-2 h-2 bg-lime-400 rounded-full"></span>
+          <span>مناسب للأفراد والفرق والشركات</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl xl:text-7xl font-black leading-tight">
+          مغامرات خارجية
+          <span class="text-lime-400 block">بتصميم احترافي وتجربة لا تُنسى</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-200 leading-8">
+          نقدم جولات كانيونينغ، رحلات قوارب، تخييم، فعاليات جماعية، وبرامج مخصصة للشركات مع مرشدين محترفين وتنظيم كامل.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="#contact" class="bg-lime-500 hover:bg-lime-600 text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition">احجز الآن</a>
+          <a href="#tours" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-4 rounded-2xl transition">استعرض الجولات</a>
+        </div>
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div class="bg-white/10 rounded-2xl p-4 border border-white/10"><div class="text-2xl font-black">+25</div><div class="text-sm text-gray-200">برنامج متنوع</div></div>
+          <div class="bg-white/10 rounded-2xl p-4 border border-white/10"><div class="text-2xl font-black">+1200</div><div class="text-sm text-gray-200">عميل سعيد</div></div>
+          <div class="bg-white/10 rounded-2xl p-4 border border-white/10"><div class="text-2xl font-black">+8</div><div class="text-sm text-gray-200">سنوات خبرة</div></div>
+          <div class="bg-white/10 rounded-2xl p-4 border border-white/10"><div class="text-2xl font-black">24/7</div><div class="text-sm text-gray-200">خدمة سريعة</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="relative text-center py-32 px-6 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
+  <!-- Tours -->
+  <section id="tours" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div>
+          <p class="text-lime-600 font-bold mb-2">أهم الأنشطة</p>
+          <h2 class="text-3xl md:text-5xl font-black">جولات ومغامرات تناسب الجميع</h2>
+        </div>
+        <p class="max-w-2xl text-gray-600 leading-8">اختر البرنامج المناسب لك أو لفريقك، ويمكننا أيضًا تخصيص تجربة كاملة حسب عدد المشاركين والميزانية ومدة النشاط.</p>
+      </div>
 
-<div class="bg-black/70 absolute inset-0"></div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <article id="tour-canyoning" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Canyoning" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-black">Canyoning</h3>
+            <p class="text-gray-600 mt-3 leading-7">مغامرة مائية مليئة بالحماس مع القفز والنزول بين الصخور والممرات الطبيعية.</p>
+            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>3 ساعات</span><span>ابتداءً من 79€</span></div>
+          </div>
+        </article>
 
-<div class="relative max-w-4xl mx-auto">
+        <article id="tour-kayak" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80" alt="Kanutouren" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-black">Kanutouren</h3>
+            <p class="text-gray-600 mt-3 leading-7">رحلات قوارب ممتعة وسط الطبيعة مناسبة للمجموعات والعائلات ومحبي المغامرة الهادئة.</p>
+            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>4 ساعات</span><span>ابتداءً من 49€</span></div>
+          </div>
+        </article>
 
-<h2 class="text-5xl md:text-7xl font-black mb-6">
-Outdoor Abenteuer
-<span class="text-lime-400 block">im Schwarzwald</span>
-</h2>
+        <article id="tour-camping" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Baumzeltübernachtung" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-black">Baumzeltübernachtung</h3>
+            <p class="text-gray-600 mt-3 leading-7">ليلة تخييم مميزة في خيام معلقة مع أجواء خارجية وتجربة استثنائية بين الأشجار.</p>
+            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>ليلة كاملة</span><span>حسب الطلب</span></div>
+          </div>
+        </article>
 
-<p class="text-gray-300 mb-8">
-Professionelle Outdoor Touren für Gruppen, Firmen und Abenteuerliebhaber.
-</p>
+        <article id="tour-bachelor" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Junggesellenabschied" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-black">Junggesellenabschied</h3>
+            <p class="text-gray-600 mt-3 leading-7">برامج خاصة لحفلات التوديع والجلسات الجماعية المليئة بالتحدي والمرح.</p>
+            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>مجموعات</span><span>برنامج مخصص</span></div>
+          </div>
+        </article>
 
-<a href="#activities" class="bg-lime-500 text-black px-6 py-4 rounded-2xl font-bold">
-Tour buchen
-</a>
+        <article id="tour-winter" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+          <img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=80" alt="Schneeschuhwanderungen" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-black">Schneeschuhwanderungen</h3>
+            <p class="text-gray-600 mt-3 leading-7">جولات شتوية ممتعة بالأحذية الثلجية مع مسارات آمنة ومناظر ساحرة.</p>
+            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>4 ساعات</span><span>ابتداءً من 59€</span></div>
+          </div>
+        </article>
 
-</div>
+        <article id="tour-airboarding" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
+          <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=80" alt="Airboarding" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-black">Airboarding</h3>
+            <p class="text-gray-600 mt-3 leading-7">نشاط شتوي سريع ومليء بالإثارة مناسب لمحبي السرعة والتجارب الفريدة.</p>
+            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>2-3 ساعات</span><span>حسب الموسم</span></div>
+          </div>
+        </article>
 
-</section>
+        <article id="tour-weekend" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition xl:col-span-2">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="Abenteuerwochenende" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-black">Abenteuerwochenende</h3>
+            <p class="text-gray-600 mt-3 leading-7">برنامج عطلة نهاية الأسبوع يشمل أكثر من نشاط مع تخطيط كامل وتجربة جماعية متكاملة.</p>
+            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>يومان</span><span>باقات خاصة</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section id="activities" class="max-w-7xl mx-auto px-6 py-20">
+  <!-- Business -->
+  <section id="business" class="py-24 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-lime-400 font-bold mb-3">للشركات والفرق</p>
+        <h2 class="text-3xl md:text-5xl font-black leading-tight">فعاليات شركات تبني الفريق وتزيد الحماس</h2>
+        <p class="mt-6 text-gray-300 leading-8 text-lg">نصمم فعاليات مخصصة للشركات تشمل أنشطة خارجية، تحديات جماعية، تنظيم كامل، وجدولة مرنة حسب حجم فريقك.</p>
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">مرشدون محترفون</div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">برامج مخصصة</div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">مناسبة للشركات</div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">عروض سريعة</div>
+        </div>
+        <a href="#contact" class="inline-block mt-8 bg-lime-500 hover:bg-lime-600 text-white font-bold px-8 py-4 rounded-2xl transition">اطلب عرض سعر</a>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80" alt="فعاليات شركات" class="w-full h-[520px] object-cover rounded-[2rem] shadow-2xl">
+      </div>
+    </div>
+  </section>
 
-<h3 class="text-4xl font-black mb-10">Unsere Abenteuer</h3>
+  <!-- Videos -->
+  <section id="videos" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="text-lime-600 font-bold mb-3">فيديو</p>
+        <h2 class="text-3xl md:text-5xl font-black">شاهد الأجواء قبل الحجز</h2>
+        <p class="mt-4 text-gray-600 leading-8">يمكنك استبدال هذه البطاقات لاحقًا بفيديوهات حقيقية من يوتيوب أو Vimeo أو فيديوهاتك الخاصة.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+          <div class="aspect-video bg-gray-900 text-white flex items-center justify-center text-5xl">▶</div>
+          <div class="p-5"><h3 class="font-black text-xl">فيديو جولة الكانيونينغ</h3><p class="text-gray-600 mt-2">مقطع تعريفي بالحماس والمسارات الطبيعية.</p></div>
+        </div>
+        <div class="rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+          <div class="aspect-video bg-gray-900 text-white flex items-center justify-center text-5xl">▶</div>
+          <div class="p-5"><h3 class="font-black text-xl">فيديو الفعاليات الجماعية</h3><p class="text-gray-600 mt-2">عرض لطريقة تنظيم البرامج للشركات والفرق.</p></div>
+        </div>
+        <div class="rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
+          <div class="aspect-video bg-gray-900 text-white flex items-center justify-center text-5xl">▶</div>
+          <div class="p-5"><h3 class="font-black text-xl">فيديو التجربة الشتوية</h3><p class="text-gray-600 mt-2">لقطات من الأنشطة الشتوية والمغامرات الخاصة.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+  <!-- Rental -->
+  <section id="rental" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="text-lime-600 font-bold mb-3">التأجير</p>
+        <h2 class="text-3xl md:text-5xl font-black">معدات وتجهيزات للفعاليات والرحلات</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-black">معدات التخييم</h3>
+          <p class="text-gray-600 mt-3 leading-7">خيام، أكياس نوم، تجهيزات نار، وإكسسوارات كاملة.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-black">معدات الثلج</h3>
+          <p class="text-gray-600 mt-3 leading-7">أحذية ثلجية، خوذ، معدات انزلاق وأنشطة موسمية.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-black">معدات مائية</h3>
+          <p class="text-gray-600 mt-3 leading-7">سترات نجاة، قوارب، أدوات أمان ومستلزمات الجولات المائية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="bg-white/5 rounded-3xl overflow-hidden">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="h-60 w-full object-cover">
-<div class="p-6">
-<h4 class="text-2xl font-bold">Canyoning</h4>
-<p class="text-gray-400 mt-2">3 Stunden • ab 79€</p>
-</div>
-</div>
+  <!-- About -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1200&q=80" alt="من نحن" class="w-full h-[520px] object-cover rounded-[2rem] shadow-xl">
+      </div>
+      <div>
+        <p class="text-lime-600 font-bold mb-3">من نحن</p>
+        <h2 class="text-3xl md:text-5xl font-black">فريق يحب الطبيعة ويصنع تجارب احترافية</h2>
+        <p class="mt-6 text-gray-600 leading-8 text-lg">نحن فريق متخصص في الأنشطة الخارجية وتنظيم التجارب الجماعية. نركز على الأمان، جودة التنظيم، ومتعة المشاركين من أول تواصل حتى نهاية الرحلة.</p>
+        <div class="mt-8 space-y-4 text-gray-700">
+          <div class="flex gap-3"><span class="text-lime-600">✓</span><span>تنظيم احترافي وبرامج قابلة للتخصيص</span></div>
+          <div class="flex gap-3"><span class="text-lime-600">✓</span><span>مرشدون أصحاب خبرة ومعدات آمنة</span></div>
+          <div class="flex gap-3"><span class="text-lime-600">✓</span><span>مناسب للأفراد، العائلات، الشركات، والمناسبات الخاصة</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="bg-white/5 rounded-3xl overflow-hidden">
-<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" class="h-60 w-full object-cover">
-<div class="p-6">
-<h4 class="text-2xl font-bold">Kanutour</h4>
-<p class="text-gray-400 mt-2">4 Stunden • ab 49€</p>
-</div>
-</div>
+  <!-- Gift -->
+  <section id="gift" class="py-24 bg-lime-400">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="font-bold mb-3 text-gray-800">قسائم الهدايا</p>
+        <h2 class="text-3xl md:text-5xl font-black text-gray-900">اهدِ تجربة لا تُنسى</h2>
+        <p class="mt-6 text-gray-800 leading-8 text-lg">قدم قسيمة هدية لأصدقائك أو لفريقك في العمل. يمكن تخصيص قيمة القسيمة أو ربطها بتجربة معينة مثل الكانيونينغ أو رحلة نهاية الأسبوع.</p>
+        <a href="#contact" class="inline-block mt-8 bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-2xl font-bold transition">اطلب قسيمة الآن</a>
+      </div>
+      <div class="bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 text-center">
+        <div class="text-5xl mb-4">🎁</div>
+        <h3 class="text-3xl font-black">Gift Voucher</h3>
+        <p class="text-gray-600 mt-4 leading-8">صالحة لجميع الأنشطة والجولات، مع إمكانية تخصيص الاسم والمبلغ والرسالة.</p>
+        <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+          <div class="rounded-2xl bg-gray-100 p-4 font-bold">50€</div>
+          <div class="rounded-2xl bg-gray-100 p-4 font-bold">100€</div>
+          <div class="rounded-2xl bg-gray-100 p-4 font-bold">200€</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="bg-white/5 rounded-3xl overflow-hidden">
-<img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4" class="h-60 w-full object-cover">
-<div class="p-6">
-<h4 class="text-2xl font-bold">Winter Events</h4>
-<p class="text-gray-400 mt-2">4 Stunden • ab 59€</p>
-</div>
-</div>
+  <!-- Reviews -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <p class="text-lime-600 font-bold mb-3">آراء العملاء</p>
+        <h2 class="text-3xl md:text-5xl font-black">ماذا يقول عملاؤنا؟</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+          <p class="text-gray-700 leading-8">“تنظيم ممتاز وتجربة جميلة جدًا. الفريق كان متعاونًا والبرنامج متكامل.”</p>
+          <div class="mt-6 font-black">أحمد م.</div>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+          <p class="text-gray-700 leading-8">“حجزنا فعالية للشركة وكان كل شيء مرتبًا بشكل احترافي من البداية للنهاية.”</p>
+          <div class="mt-6 font-black">سارة ك.</div>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+          <p class="text-gray-700 leading-8">“أعجبتنا القسائم والهدايا وطريقة الترتيب السريع للحجز.”</p>
+          <div class="mt-6 font-black">محمد ع.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="bg-white/5 rounded-3xl overflow-hidden">
-<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac" class="h-60 w-full object-cover">
-<div class="p-6">
-<h4 class="text-2xl font-bold">Team Events</h4>
-<p class="text-gray-400 mt-2">ab 8 Personen</p>
-</div>
-</div>
+  <!-- Terms -->
+  <section id="terms" class="py-24 bg-gray-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
+      <p class="text-lime-400 font-bold mb-3">الشروط</p>
+      <h2 class="text-3xl md:text-5xl font-black mb-8">شروط وأحكام مختصرة</h2>
+      <div class="space-y-6 text-gray-300 leading-8 text-lg">
+        <p>يجب الحجز المسبق لجميع البرامج، وقد تختلف المواعيد حسب الطقس وعدد المشاركين وتوفر المعدات.</p>
+        <p>يحق للمنظم تعديل الموعد أو استبدال النشاط عند وجود ظروف مناخية أو تشغيلية تؤثر على السلامة.</p>
+        <p>بعض الأنشطة تتطلب مستوى لياقة مناسب واتباع تعليمات السلامة بشكل كامل أثناء التجربة.</p>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <p class="text-lime-600 font-bold mb-3">تواصل معنا</p>
+        <h2 class="text-3xl md:text-5xl font-black">احجز جولتك أو اطلب عرضًا خاصًا</h2>
+        <p class="mt-6 text-gray-600 leading-8 text-lg">اكتب لنا تفاصيل رحلتك أو عدد المشاركين أو نوع الفعالية، وسنعود إليك بعرض مناسب في أسرع وقت.</p>
+        <div class="mt-8 space-y-4 text-gray-700">
+          <div><strong>البريد:</strong> info@example.com</div>
+          <div><strong>الهاتف:</strong> +49 123 456 789</div>
+          <div><strong>العنوان:</strong> Schwarzwald, Germany</div>
+        </div>
+      </div>
 
-</section>
+      <form class="bg-white rounded-[2rem] shadow-xl p-6 md:p-8 border border-gray-100 grid gap-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="الاسم الكامل" class="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 outline-none focus:border-lime-500">
+          <input type="email" placeholder="البريد الإلكتروني" class="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 outline-none focus:border-lime-500">
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="رقم الهاتف" class="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 outline-none focus:border-lime-500">
+          <select class="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 outline-none focus:border-lime-500">
+            <option>اختر الخدمة</option>
+            <option>Canyoning</option>
+            <option>Kanutouren</option>
+            <option>Firmenevents</option>
+            <option>Gutschein</option>
+          </select>
+        </div>
+        <textarea rows="6" placeholder="اكتب تفاصيل طلبك هنا" class="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 outline-none focus:border-lime-500"></textarea>
+        <button type="submit" class="bg-lime-500 hover:bg-lime-600 text-white font-black px-6 py-4 rounded-2xl transition">إرسال الطلب</button>
+      </form>
+    </div>
+  </section>
 
-<section id="business" class="bg-gray-900 py-20">
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <div>© 2026 Adventure Becker. جميع الحقوق محفوظة.</div>
+      <div class="flex items-center gap-4">
+        <a href="#terms" class="hover:text-lime-600">الشروط</a>
+        <a href="#about" class="hover:text-lime-600">من نحن</a>
+        <a href="#contact" class="hover:text-lime-600">تواصل</a>
+      </div>
+    </div>
+  </footer>
 
-<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-<div>
-
-<h3 class="text-4xl font-black mb-6">
-Teambuilding & Firmenevents
-</h3>
-
-<p class="text-gray-400 mb-6">
-Wir organisieren professionelle Outdoor Events für Firmen und Teams.
-</p>
-
-<ul class="space-y-3 text-gray-300">
-
-<li>Professionelle Guides</li>
-<li>Individuelle Programme</li>
-<li>Perfekt für Unternehmen</li>
-<li>Schnelle Angebotsanfrage</li>
-
-</ul>
-
-<a href="#contact" class="inline-block mt-8 bg-lime-500 text-black px-6 py-3 rounded-xl font-bold">
-Angebot anfordern
-</a>
-
-</div>
-
-<img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205"
-class="rounded-3xl object-cover h-full">
-
-</div>
-
-</section>
-
-<section id="reviews" class="max-w-7xl mx-auto px-6 py-20">
-
-<h3 class="text-4xl font-black mb-10">Kundenstimmen</h3>
-
-<div class="grid md:grid-cols-2 gap-6">
-
-<div class="bg-white/5 p-8 rounded-3xl">
-<p class="text-gray-300">
-“Super Organisation und tolles Erlebnis!”
-</p>
-<p class="mt-4 text-lime-400 font-bold">Anna M.</p>
-</div>
-
-<div class="bg-white/5 p-8 rounded-3xl">
-<p class="text-gray-300">
-“Unser Firmenevent war perfekt organisiert.”
-</p>
-<p class="mt-4 text-lime-400 font-bold">Markus S.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="bg-gray-900 py-20">
-
-<div class="max-w-3xl mx-auto px-6 text-center">
-
-<h3 class="text-4xl font-black mb-8">
-Jetzt deine Tour anfragen
-</h3>
-
-<form class="grid gap-4">
-
-<input type="text" placeholder="Name"
-class="p-4 rounded-xl bg-black border border-gray-700">
-
-<input type="email" placeholder="Email"
-class="p-4 rounded-xl bg-black border border-gray-700">
-
-<input type="text" placeholder="Telefon"
-class="p-4 rounded-xl bg-black border border-gray-700">
-
-<textarea placeholder="Nachricht"
-class="p-4 rounded-xl bg-black border border-gray-700"></textarea>
-
-<button class="bg-lime-500 text-black p-4 rounded-xl font-bold">
-Anfrage senden
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<footer class="border-t border-white/10 py-6 text-center text-gray-400">
-© 2026 AdrenalinBecker
-</footer>
-
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  </script>
 </body>
 </html>
