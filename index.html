@@ -111,83 +111,113 @@
     </div>
   </section>
 
-  <!-- Tours -->
+  <!-- Main Categories -->
   <section id="tours" class="py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
         <div>
-          <p class="text-lime-600 font-bold mb-2">أهم الأنشطة</p>
-          <h2 class="text-3xl md:text-5xl font-black">جولات ومغامرات تناسب الجميع</h2>
+          <p class="text-lime-600 font-bold mb-2">الواجهة الرئيسية</p>
+          <h2 class="text-3xl md:text-5xl font-black">8 أقسام رئيسية للخدمات والأنشطة</h2>
         </div>
-        <p class="max-w-2xl text-gray-600 leading-8">اختر البرنامج المناسب لك أو لفريقك، ويمكننا أيضًا تخصيص تجربة كاملة حسب عدد المشاركين والميزانية ومدة النشاط.</p>
+        <p class="max-w-2xl text-gray-600 leading-8">رتبت لك الواجهة الرئيسية على شكل 8 بطاقات كبيرة وواضحة، مشابهة لأسلوب الصورة التي أرسلتها، بحيث يظهر كل نشاط كقسم مستقل داخل الصفحة الرئيسية.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-        <article id="tour-canyoning" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Canyoning" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-black">Canyoning</h3>
-            <p class="text-gray-600 mt-3 leading-7">مغامرة مائية مليئة بالحماس مع القفز والنزول بين الصخور والممرات الطبيعية.</p>
-            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>3 ساعات</span><span>ابتداءً من 79€</span></div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 auto-rows-[320px]">
+        <article id="tree-camp" class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="قضاء ليل في خيمة شجرة" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-black/15"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">1. قضاء ليل في خيمة شجرة</h3>
+            <p class="mt-2 text-white/85 leading-7">تجربة مبيت مميزة وسط الطبيعة في خيمة معلقة بين الأشجار.</p>
           </div>
         </article>
 
-        <article id="tour-kayak" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80" alt="Kanutouren" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-black">Kanutouren</h3>
-            <p class="text-gray-600 mt-3 leading-7">رحلات قوارب ممتعة وسط الطبيعة مناسبة للمجموعات والعائلات ومحبي المغامرة الهادئة.</p>
-            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>4 ساعات</span><span>ابتداءً من 49€</span></div>
+        <article id="buy-tree-tent" class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1200&q=80" alt="شراء خيمة شجرة" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">2. شراء خيمة شجرة</h3>
+            <p class="mt-2 text-white/85 leading-7">قسم مخصص لعرض وطلب خيام الأشجار ومنتجات التخييم الخاصة.</p>
           </div>
         </article>
 
-        <article id="tour-camping" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Baumzeltübernachtung" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-black">Baumzeltübernachtung</h3>
-            <p class="text-gray-600 mt-3 leading-7">ليلة تخييم مميزة في خيام معلقة مع أجواء خارجية وتجربة استثنائية بين الأشجار.</p>
-            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>ليلة كاملة</span><span>حسب الطلب</span></div>
+        <article id="sup" class="relative rounded-[2rem] overflow-hidden shadow-lg group xl:row-span-2">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="التجديف في SUP" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-black/20"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">3. التجديف في SUP</h3>
+            <p class="mt-2 text-white/85 leading-7">يشمل التجديف العادي والتجديف بعد العمل في أجواء ممتعة وهادئة.</p>
           </div>
         </article>
 
-        <article id="tour-bachelor" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Junggesellenabschied" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-black">Junggesellenabschied</h3>
-            <p class="text-gray-600 mt-3 leading-7">برامج خاصة لحفلات التوديع والجلسات الجماعية المليئة بالتحدي والمرح.</p>
-            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>مجموعات</span><span>برنامج مخصص</span></div>
+        <article id="snowshoe" class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=1200&q=80" alt="رحلة المشي بالأحذية الثلجية" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-lime-700/90 to-lime-500/40"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">4. رحلة المشي بالأحذية الثلجية</h3>
+            <p class="mt-2 text-white/90 leading-7">أنشطة شتوية رائعة مع مناظر طبيعية ومسارات آمنة.</p>
           </div>
         </article>
 
-        <article id="tour-winter" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&q=80" alt="Schneeschuhwanderungen" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-black">Schneeschuhwanderungen</h3>
-            <p class="text-gray-600 mt-3 leading-7">جولات شتوية ممتعة بالأحذية الثلجية مع مسارات آمنة ومناظر ساحرة.</p>
-            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>4 ساعات</span><span>ابتداءً من 59€</span></div>
+        <article id="students" class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="الحلقة الخاصة بالطلاب" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-black/20"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">5. الحلقة الخاصة بالطلاب</h3>
+            <p class="mt-2 text-white/85 leading-7">برامج مخصصة للطلاب تشمل الترفيه والتحديات والأنشطة الجماعية.</p>
           </div>
         </article>
 
-        <article id="tour-airboarding" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=80" alt="Airboarding" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-black">Airboarding</h3>
-            <p class="text-gray-600 mt-3 leading-7">نشاط شتوي سريع ومليء بالإثارة مناسب لمحبي السرعة والتجارب الفريدة.</p>
-            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>2-3 ساعات</span><span>حسب الموسم</span></div>
+        <article id="bachelor" class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80" alt="حفلة توديع العزوبية" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-black/20"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">6. حفلة توديع العزوبية</h3>
+            <p class="mt-2 text-white/85 leading-7">برامج ممتعة ومليئة بالمغامرة للمجموعات والمناسبات الخاصة.</p>
           </div>
         </article>
 
-        <article id="tour-weekend" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition xl:col-span-2">
-          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80" alt="Abenteuerwochenende" class="h-64 w-full object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-black">Abenteuerwochenende</h3>
-            <p class="text-gray-600 mt-3 leading-7">برنامج عطلة نهاية الأسبوع يشمل أكثر من نشاط مع تخطيط كامل وتجربة جماعية متكاملة.</p>
-            <div class="mt-5 flex items-center justify-between text-sm text-gray-500"><span>يومان</span><span>باقات خاصة</span></div>
+        <article id="canoeing" class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80" alt="التجديف" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-black/20"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">7. التجديف</h3>
+            <p class="mt-2 text-white/85 leading-7">رحلات تجديف ممتعة مناسبة للأفراد والمجموعات والعائلات.</p>
+          </div>
+        </article>
+
+        <article id="jungle-booking" class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+          <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1200&q=80" alt="حجز مواعيد التنقل في الأدغال" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-black/20"></div>
+          <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+            <h3 class="text-2xl font-black">8. حجز مواعيد التنقل في الأدغال</h3>
+            <p class="mt-2 text-white/85 leading-7">قسم خاص لحجز المواعيد والأنشطة المليئة بالتحدي بين الطبيعة والمسارات البرية.</p>
           </div>
         </article>
       </div>
     </div>
   </section>
+
+<!-- Example links for each section page -->
+<!-- To make every image open its own page, wrap the card with a link like this: -->
+<!-- Example for Tree Tent -->
+<!--
+<a href="tree-tent.html" class="block">
+  <article class="relative rounded-[2rem] overflow-hidden shadow-lg group">
+    ... image and text ...
+  </article>
+</a>
+-->
+
+<!-- Then create separate pages such as: -->
+<!-- tree-tent.html -->
+<!-- buy-tree-tent.html -->
+<!-- sup.html -->
+<!-- snowshoe.html -->
+<!-- students.html -->
+<!-- bachelor.html -->
+<!-- canoeing.html -->
+<!-- jungle-booking.html -->
 
   <!-- Business -->
   <section id="business" class="py-24 bg-gray-900 text-white">
