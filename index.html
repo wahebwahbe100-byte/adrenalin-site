@@ -1,371 +1,201 @@
-export default function AdventureLandingPage() {
-  const activities = [
-    {
-      title: "Canyoning",
-      desc: "شلالات، قفز، انزلاق، وتجربة مليئة بالأدرينالين في قلب الطبيعة.",
-      meta: "3 Stunden • ab 79€",
-      image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Kanutour",
-      desc: "رحلات تجديف ممتعة مناسبة للأفراد والمجموعات والشركات.",
-      meta: "4 Stunden • ab 49€",
-      image:
-        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Winter Events",
-      desc: "أنشطة شتوية مميزة وتجارب جماعية في أجواء احترافية.",
-      meta: "4 Stunden • ab 59€",
-      image:
-        "https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      title: "Team Events",
-      desc: "فعاليات للشركات والفرق مع تنظيم كامل وتجربة لا تُنسى.",
-      meta: "ab 8 Personen",
-      image:
-        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
-    },
-  ];
+<!DOCTYPE html>
+<html lang="en">
 
-  const stats = [
-    { value: "20+", label: "Jahre Erfahrung" },
-    { value: "5000+", label: "Teilnehmer" },
-    { value: "4.9", label: "Google Bewertung" },
-  ];
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  const benefits = [
-    "Professionelle Guides",
-    "Perfekt für Privatgruppen & Firmen",
-    "Schnelle Anfrage und klare Angebote",
-    "Modernes, vertrauenswürdiges Markenbild",
-  ];
+<title>AdrenalinBecker</title>
 
-  const testimonials = [
-    {
-      name: "Anna M.",
-      text: "Super Organisation, tolles Erlebnis und sehr professionelles Team.",
-    },
-    {
-      name: "Markus S.",
-      text: "Unser Firmenevent war hervorragend geplant und kam bei allen sehr gut an.",
-    },
-  ];
+<script src="https://cdn.tailwindcss.com"></script>
 
-  return (
-    <div className="min-h-screen bg-neutral-950 text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div>
-            <h1 className="text-xl font-black tracking-wide">AdrenalinBecker</h1>
-            <p className="text-xs text-white/60">Outdoor Abenteuer im Schwarzwald</p>
-          </div>
+</head>
 
-          <nav className="hidden items-center gap-8 md:flex">
-            <a href="#activities" className="text-sm text-white/80 hover:text-white">
-              Aktivitäten
-            </a>
-            <a href="#business" className="text-sm text-white/80 hover:text-white">
-              Firmenevents
-            </a>
-            <a href="#reviews" className="text-sm text-white/80 hover:text-white">
-              Bewertungen
-            </a>
-            <a href="#contact" className="text-sm text-white/80 hover:text-white">
-              Kontakt
-            </a>
-          </nav>
+<body class="bg-black text-white font-sans">
 
-          <a
-            href="#contact"
-            className="rounded-2xl bg-lime-500 px-5 py-3 text-sm font-bold text-black transition hover:scale-[1.02]"
-          >
-            Jetzt anfragen
-          </a>
-        </div>
-      </header>
+<header class="bg-black/80 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-neutral-950" />
+<div>
+<h1 class="text-xl font-bold">AdrenalinBecker</h1>
+<p class="text-xs text-gray-400">Outdoor Abenteuer im Schwarzwald</p>
+</div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-          <div className="flex flex-col justify-center">
-            <div className="mb-4 inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90">
-              Abenteuer • Natur • Teamgeist
-            </div>
+<nav class="hidden md:flex gap-6 text-sm">
+<a href="#activities">Aktivitäten</a>
+<a href="#business">Firmenevents</a>
+<a href="#reviews">Bewertungen</a>
+<a href="#contact">Kontakt</a>
+</nav>
 
-            <h2 className="max-w-2xl text-5xl font-black leading-tight md:text-7xl">
-              Outdoor Abenteuer
-              <span className="block text-lime-400">im Schwarzwald</span>
-            </h2>
+<a href="#contact" class="bg-lime-500 text-black px-4 py-2 rounded-xl font-bold">
+Jetzt anfragen
+</a>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-white/75 md:text-lg">
-              موقع احترافي قوي لعرض الجولات والفعاليات الخارجية، مع تجربة بصرية
-              حديثة تساعد على رفع الثقة وزيادة الحجوزات.
-            </p>
+</div>
+</header>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#activities"
-                className="rounded-2xl bg-lime-500 px-6 py-4 font-bold text-black transition hover:scale-[1.02]"
-              >
-                Tour buchen
-              </a>
-              <a
-                href="#business"
-                className="rounded-2xl border border-white/20 bg-white/10 px-6 py-4 font-bold text-white transition hover:bg-white/20"
-              >
-                Firmenevent planen
-              </a>
-            </div>
+<section class="relative text-center py-32 px-6 bg-cover bg-center"
+style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');">
 
-            <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
-              {stats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm"
-                >
-                  <div className="text-2xl font-black md:text-3xl">{item.value}</div>
-                  <div className="mt-1 text-xs text-white/60 md:text-sm">{item.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+<div class="bg-black/70 absolute inset-0"></div>
 
-          <div className="flex items-end">
-            <div className="w-full rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl">
-              <div className="mb-5">
-                <p className="text-sm uppercase tracking-[0.25em] text-lime-400">
-                  Schnellanfrage
-                </p>
-                <h3 className="mt-2 text-2xl font-black">Deine Tour in 1 Minute anfragen</h3>
-              </div>
+<div class="relative max-w-4xl mx-auto">
 
-              <form className="grid gap-4">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none placeholder:text-white/40"
-                />
-                <input
-                  type="email"
-                  placeholder="E-Mail"
-                  className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none placeholder:text-white/40"
-                />
-                <input
-                  type="text"
-                  placeholder="Telefon"
-                  className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none placeholder:text-white/40"
-                />
-                <select className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none">
-                  <option>Aktivität wählen</option>
-                  <option>Canyoning</option>
-                  <option>Kanutour</option>
-                  <option>Winter Events</option>
-                  <option>Team Events</option>
-                </select>
-                <textarea
-                  rows={4}
-                  placeholder="Beschreibe kurz dein Vorhaben"
-                  className="rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none placeholder:text-white/40"
-                />
-                <button
-                  type="submit"
-                  className="rounded-2xl bg-lime-500 px-5 py-4 font-bold text-black transition hover:scale-[1.01]"
-                >
-                  Unverbindlich anfragen
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+<h2 class="text-5xl md:text-7xl font-black mb-6">
+Outdoor Abenteuer
+<span class="text-lime-400 block">im Schwarzwald</span>
+</h2>
 
-      <section id="activities" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="max-w-2xl">
-          <p className="text-sm uppercase tracking-[0.25em] text-lime-400">Aktivitäten</p>
-          <h3 className="mt-3 text-4xl font-black">Unsere Abenteuer</h3>
-          <p className="mt-4 text-white/65">
-            عرض أنشطة واضح وقوي بصريًا بدل الشكل القديم، مع بطاقات حديثة تساعد
-            الزائر على الاختيار بسرعة.
-          </p>
-        </div>
+<p class="text-gray-300 mb-8">
+Professionelle Outdoor Touren für Gruppen, Firmen und Abenteuerliebhaber.
+</p>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {activities.map((activity) => (
-            <div
-              key={activity.title}
-              className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 transition hover:-translate-y-1 hover:bg-white/[0.07]"
-            >
-              <div
-                className="h-64 bg-cover bg-center transition duration-500 group-hover:scale-105"
-                style={{ backgroundImage: `url('${activity.image}')` }}
-              />
-              <div className="p-6">
-                <h4 className="text-2xl font-black">{activity.title}</h4>
-                <p className="mt-3 text-sm leading-6 text-white/65">{activity.desc}</p>
-                <div className="mt-4 text-sm font-semibold text-lime-400">{activity.meta}</div>
-                <button className="mt-6 rounded-2xl bg-lime-500 px-4 py-3 font-bold text-black">
-                  Details ansehen
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+<a href="#activities" class="bg-lime-500 text-black px-6 py-4 rounded-2xl font-bold">
+Tour buchen
+</a>
 
-      <section id="business" className="bg-white/[0.03] py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
-          <div className="flex flex-col justify-center">
-            <p className="text-sm uppercase tracking-[0.25em] text-lime-400">B2B Focus</p>
-            <h3 className="mt-3 text-4xl font-black md:text-5xl">
-              Teambuilding & Firmenevents
-            </h3>
-            <p className="mt-5 max-w-xl text-base leading-7 text-white/70">
-              قسم مخصص للشركات يمنح الموقع قوة تسويقية أكبر، ويجعل عرض الخدمة
-              احترافيًا وواضحًا لأصحاب الأعمال وفرق الموارد البشرية.
-            </p>
+</div>
 
-            <div className="mt-8 grid gap-4">
-              {benefits.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-white/85"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
+</section>
 
-            <a
-              href="#contact"
-              className="mt-8 w-fit rounded-2xl bg-lime-500 px-6 py-4 font-bold text-black"
-            >
-              Angebot anfordern
-            </a>
-          </div>
+<section id="activities" class="max-w-7xl mx-auto px-6 py-20">
 
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-black/20">
-            <div
-              className="h-full min-h-[500px] bg-cover bg-center"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80')",
-              }}
-            />
-          </div>
-        </div>
-      </section>
+<h3 class="text-4xl font-black mb-10">Unsere Abenteuer</h3>
 
-      <section id="reviews" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
-            <p className="text-sm uppercase tracking-[0.25em] text-lime-400">
-              Vertrauen
-            </p>
-            <h3 className="mt-3 text-4xl font-black">Kundenstimmen & Partner</h3>
-            <div className="mt-8 rounded-3xl bg-black/30 p-6">
-              <div className="text-4xl font-black">
-                4.9 <span className="text-lg text-lime-400">Google Rating</span>
-              </div>
-              <p className="mt-2 text-white/60">Basierend auf vielen positiven Erfahrungen</p>
-            </div>
+<div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
 
-            <div className="mt-6 grid grid-cols-2 gap-4 text-center md:grid-cols-4">
-              {["Allianz", "Bosch", "Siemens", "Mercedes"].map((brand) => (
-                <div
-                  key={brand}
-                  className="rounded-2xl border border-white/10 bg-black/20 px-4 py-5 text-sm font-bold text-white/70"
-                >
-                  {brand}
-                </div>
-              ))}
-            </div>
-          </div>
+<div class="bg-white/5 rounded-3xl overflow-hidden">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="h-60 w-full object-cover">
+<div class="p-6">
+<h4 class="text-2xl font-bold">Canyoning</h4>
+<p class="text-gray-400 mt-2">3 Stunden • ab 79€</p>
+</div>
+</div>
 
-          <div className="grid gap-6">
-            {testimonials.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-[2rem] border border-white/10 bg-white/5 p-8"
-              >
-                <p className="text-lg leading-8 text-white/80">“{item.text}”</p>
-                <div className="mt-5 text-sm font-bold text-lime-400">{item.name}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+<div class="bg-white/5 rounded-3xl overflow-hidden">
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" class="h-60 w-full object-cover">
+<div class="p-6">
+<h4 class="text-2xl font-bold">Kanutour</h4>
+<p class="text-gray-400 mt-2">4 Stunden • ab 49€</p>
+</div>
+</div>
 
-      <section id="contact" className="border-t border-white/10 bg-black/40">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-10 text-center">
-            <p className="text-sm uppercase tracking-[0.25em] text-lime-400">Kontakt</p>
-            <h3 className="mt-3 text-4xl font-black md:text-5xl">
-              Jetzt deine Tour anfragen
-            </h3>
-            <p className="mt-4 text-white/65">
-              واجهة تواصل واضحة تساعد الزائر على إرسال الطلب بسرعة.
-            </p>
-          </div>
+<div class="bg-white/5 rounded-3xl overflow-hidden">
+<img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4" class="h-60 w-full object-cover">
+<div class="p-6">
+<h4 class="text-2xl font-bold">Winter Events</h4>
+<p class="text-gray-400 mt-2">4 Stunden • ab 59€</p>
+</div>
+</div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <input
-              type="text"
-              placeholder="Name"
-              className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 outline-none placeholder:text-white/40"
-            />
-            <input
-              type="email"
-              placeholder="E-Mail"
-              className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 outline-none placeholder:text-white/40"
-            />
-            <input
-              type="text"
-              placeholder="Telefon"
-              className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 outline-none placeholder:text-white/40"
-            />
-            <select className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 outline-none">
-              <option>Aktivität</option>
-              <option>Canyoning</option>
-              <option>Kanutour</option>
-              <option>Winter Events</option>
-              <option>Team Events</option>
-            </select>
-            <textarea
-              rows={5}
-              placeholder="Nachricht"
-              className="md:col-span-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 outline-none placeholder:text-white/40"
-            />
-            <button className="md:col-span-2 rounded-2xl bg-lime-500 px-6 py-4 font-bold text-black">
-              Anfrage senden
-            </button>
-          </div>
-        </div>
-      </section>
+<div class="bg-white/5 rounded-3xl overflow-hidden">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac" class="h-60 w-full object-cover">
+<div class="p-6">
+<h4 class="text-2xl font-bold">Team Events</h4>
+<p class="text-gray-400 mt-2">ab 8 Personen</p>
+</div>
+</div>
 
-      <footer className="border-t border-white/10 bg-neutral-950">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 md:flex-row md:items-center md:justify-between">
-          <div>
-            <div className="text-lg font-black">AdrenalinBecker</div>
-            <div className="text-sm text-white/50">Outdoor Abenteuer im Schwarzwald</div>
-          </div>
+</div>
 
-          <div className="text-sm text-white/50">
-            © 2026 All rights reserved
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+</section>
+
+<section id="business" class="bg-gray-900 py-20">
+
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+<div>
+
+<h3 class="text-4xl font-black mb-6">
+Teambuilding & Firmenevents
+</h3>
+
+<p class="text-gray-400 mb-6">
+Wir organisieren professionelle Outdoor Events für Firmen und Teams.
+</p>
+
+<ul class="space-y-3 text-gray-300">
+
+<li>Professionelle Guides</li>
+<li>Individuelle Programme</li>
+<li>Perfekt für Unternehmen</li>
+<li>Schnelle Angebotsanfrage</li>
+
+</ul>
+
+<a href="#contact" class="inline-block mt-8 bg-lime-500 text-black px-6 py-3 rounded-xl font-bold">
+Angebot anfordern
+</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205"
+class="rounded-3xl object-cover h-full">
+
+</div>
+
+</section>
+
+<section id="reviews" class="max-w-7xl mx-auto px-6 py-20">
+
+<h3 class="text-4xl font-black mb-10">Kundenstimmen</h3>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-white/5 p-8 rounded-3xl">
+<p class="text-gray-300">
+“Super Organisation und tolles Erlebnis!”
+</p>
+<p class="mt-4 text-lime-400 font-bold">Anna M.</p>
+</div>
+
+<div class="bg-white/5 p-8 rounded-3xl">
+<p class="text-gray-300">
+“Unser Firmenevent war perfekt organisiert.”
+</p>
+<p class="mt-4 text-lime-400 font-bold">Markus S.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="bg-gray-900 py-20">
+
+<div class="max-w-3xl mx-auto px-6 text-center">
+
+<h3 class="text-4xl font-black mb-8">
+Jetzt deine Tour anfragen
+</h3>
+
+<form class="grid gap-4">
+
+<input type="text" placeholder="Name"
+class="p-4 rounded-xl bg-black border border-gray-700">
+
+<input type="email" placeholder="Email"
+class="p-4 rounded-xl bg-black border border-gray-700">
+
+<input type="text" placeholder="Telefon"
+class="p-4 rounded-xl bg-black border border-gray-700">
+
+<textarea placeholder="Nachricht"
+class="p-4 rounded-xl bg-black border border-gray-700"></textarea>
+
+<button class="bg-lime-500 text-black p-4 rounded-xl font-bold">
+Anfrage senden
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer class="border-t border-white/10 py-6 text-center text-gray-400">
+© 2026 AdrenalinBecker
+</footer>
+
+</body>
+</html>
