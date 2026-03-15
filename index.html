@@ -67,16 +67,68 @@
       pointer-events: auto;
       transform: translateY(0);
     }
+
+    /* عشب صغير تحت الكلمات */
+    .grass-underline {
+      position: relative;
+    }
+
+    .grass-underline::after {
+      content: "";
+      position: absolute;
+      right: 8px;
+      left: 8px;
+      bottom: 8px;
+      height: 10px;
+      background-image:
+        radial-gradient(circle at 5px 10px, #84cc16 0 4px, transparent 5px),
+        radial-gradient(circle at 15px 10px, #65a30d 0 5px, transparent 6px),
+        radial-gradient(circle at 25px 10px, #4d7c0f 0 4px, transparent 5px),
+        radial-gradient(circle at 35px 10px, #84cc16 0 5px, transparent 6px);
+      background-size: 40px 10px;
+      background-repeat: repeat-x;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+
+    /* عشب ممتد */
+    .grass-line {
+      width: 100%;
+      height: 26px;
+      background-image:
+        radial-gradient(circle at 6px 24px, #65a30d 0 7px, transparent 8px),
+        radial-gradient(circle at 18px 24px, #84cc16 0 8px, transparent 9px),
+        radial-gradient(circle at 30px 24px, #4d7c0f 0 7px, transparent 8px),
+        radial-gradient(circle at 42px 24px, #65a30d 0 8px, transparent 9px),
+        radial-gradient(circle at 54px 24px, #84cc16 0 7px, transparent 8px);
+      background-size: 60px 26px;
+      background-repeat: repeat-x;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+
+    .grass-line-dark {
+      width: 100%;
+      height: 30px;
+      background-image:
+        radial-gradient(circle at 6px 28px, #3f6212 0 8px, transparent 9px),
+        radial-gradient(circle at 18px 28px, #4d7c0f 0 9px, transparent 10px),
+        radial-gradient(circle at 30px 28px, #65a30d 0 8px, transparent 9px),
+        radial-gradient(circle at 42px 28px, #3f6212 0 9px, transparent 10px),
+        radial-gradient(circle at 54px 28px, #84cc16 0 8px, transparent 9px);
+      background-size: 60px 30px;
+      background-repeat: repeat-x;
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="text-gray-900">
 
   <!-- Header -->
-  <header id="siteHeader" class="sticky top-0 z-50 bg-gradient-to-l from-green-950/95 via-emerald-900/95 to-sky-900/95 backdrop-blur border-b border-white/10 transition-all duration-300">
+  <header id="siteHeader" class="sticky top-0 z-50 bg-gradient-to-l from-green-950/95 via-emerald-900/95 to-sky-900/95 backdrop-blur border-b border-white/10 transition-all duration-300 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="flex items-center justify-between h-24 gap-4">
 
-        <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3 shrink-0">
           <img src="logo.png" alt="Adventure Becker Logo" class="w-14 h-14 object-contain rounded-xl">
           <div>
@@ -85,10 +137,9 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center gap-1 text-[16px]">
           <div class="relative group">
-            <a href="#tours" class="inline-flex items-center gap-2 px-5 py-4 rounded-xl bg-lime-500 text-white font-bold hover:bg-lime-400 transition shadow-lg shadow-lime-500/20">
+            <a href="#tours" class="grass-underline inline-flex items-center gap-2 px-5 py-4 rounded-xl bg-lime-500 text-white font-bold hover:bg-lime-400 transition shadow-lg shadow-lime-500/20">
               <span>🌿</span>
               <span>الدورات والجولات</span>
             </a>
@@ -104,25 +155,23 @@
             </div>
           </div>
 
-          <a href="#business" class="px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">فعاليات الشركات</a>
-          <a href="#videos" class="px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">فيديو</a>
-          <a href="#rental" class="px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">التأجير</a>
-          <a href="#about" class="px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">من نحن</a>
-          <a href="#gift" class="px-5 py-4 rounded-xl bg-lime-500 text-white font-bold hover:bg-lime-400 transition shadow-lg shadow-lime-500/20">
+          <a href="#business" class="grass-underline px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">فعاليات الشركات</a>
+          <a href="#videos" class="grass-underline px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">فيديو</a>
+          <a href="#rental" class="grass-underline px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">التأجير</a>
+          <a href="#about" class="grass-underline px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">من نحن</a>
+          <a href="#gift" class="grass-underline px-5 py-4 rounded-xl bg-lime-500 text-white font-bold hover:bg-lime-400 transition shadow-lg shadow-lime-500/20">
             🎁 قسيمة
           </a>
-          <a href="#terms" class="px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">الشروط</a>
-          <a href="#contact" class="px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">تواصل</a>
+          <a href="#terms" class="grass-underline px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">الشروط</a>
+          <a href="#contact" class="grass-underline px-4 py-4 rounded-xl text-white hover:text-lime-300 transition">تواصل</a>
         </nav>
 
-        <!-- Mobile Button -->
         <button id="menuBtn" class="lg:hidden text-3xl px-3 py-2 rounded-xl border border-white/20 text-white">
           ☰
         </button>
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-gradient-to-l from-green-950 via-emerald-900 to-sky-900">
       <div class="max-w-7xl mx-auto px-4 py-5 space-y-3">
         <details class="rounded-2xl overflow-hidden border border-white/10">
@@ -148,6 +197,8 @@
         <a href="#contact" class="block py-2 text-white">تواصل</a>
       </div>
     </div>
+
+    <div class="grass-line"></div>
   </header>
 
   <!-- Hero -->
@@ -483,6 +534,34 @@
     </div>
   </section>
 
+  <!-- Snow + Adventure Ending Section -->
+  <section class="py-24 bg-gradient-to-r from-slate-900 via-sky-800 to-emerald-900 text-white reveal">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-lime-300 font-bold mb-3">ختام المغامرة</p>
+        <h2 class="text-3xl md:text-5xl font-black leading-tight">
+          من حرارة المغامرة إلى سحر الثلج
+        </h2>
+        <p class="mt-6 text-white/90 leading-8 text-lg">
+          سواء كنت تبحث عن التجديف بين المياه الهادئة أو المشي وسط الثلوج البيضاء، فإن رحلتك معنا مصممة لتمنحك تجربة مليئة بالحياة، الحماس، والذكريات التي لا تُنسى.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-5 text-center font-bold">❄️ ثلوج</div>
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-5 text-center font-bold">⛰️ مغامرة</div>
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-5 text-center font-bold">🌲 طبيعة</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <img src="images/snow.jpg" alt="ثلج" class="rounded-[2rem] h-60 w-full object-cover card-hover">
+        <img src="images/snowshoe.jpg" alt="مغامرة شتوية" class="rounded-[2rem] h-60 w-full object-cover card-hover">
+        <img src="images/jungle.jpg" alt="مغامرة" class="rounded-[2rem] h-60 w-full object-cover card-hover">
+        <img src="images/tree-tent.jpg" alt="طبيعة" class="rounded-[2rem] h-60 w-full object-cover card-hover">
+      </div>
+    </div>
+  </section>
+
   <!-- Terms -->
   <section id="terms" class="py-24 bg-gray-900 text-white reveal">
     <div class="max-w-5xl mx-auto px-4 md:px-6">
@@ -533,6 +612,11 @@
         <button type="submit" class="bg-lime-500 hover:bg-lime-600 text-white font-black px-6 py-4 rounded-2xl transition">إرسال الطلب</button>
       </form>
     </div>
+  </section>
+
+  <!-- Grass Before Footer -->
+  <section class="bg-gradient-to-r from-green-800 via-lime-600 to-green-800">
+    <div class="grass-line-dark"></div>
   </section>
 
   <!-- Footer -->
