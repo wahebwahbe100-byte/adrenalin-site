@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تسجيل الدخول</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-white/10 backdrop-blur rounded-3xl p-6 shadow-2xl border border-white/10">
+    <h1 class="text-2xl font-black mb-2">تسجيل الدخول</h1>
+    <p class="text-white/70 mb-6">ادخل إلى لوحة التحكم لتعديل الصور والنصوص</p>
+
+    <div class="space-y-4">
+      <input id="email" type="email" placeholder="البريد الإلكتروني" class="w-full rounded-2xl p-4 bg-white/10 border border-white/15 outline-none">
+      <input id="password" type="password" placeholder="كلمة المرور" class="w-full rounded-2xl p-4 bg-white/10 border border-white/15 outline-none">
+      <button id="loginBtn" class="w-full rounded-2xl p-4 bg-lime-500 hover:bg-lime-600 font-bold">دخول</button>
+      <button id="signupBtn" class="w-full rounded-2xl p-4 bg-sky-600 hover:bg-sky-700 font-bold">إنشاء حساب أدمن أول مرة</button>
+    </div>
+
+    <p id="msg" class="mt-4 text-sm"></p>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+    const supabase = createClient(
+      'https://beyxyvibqzhtyawqrhbv.supabase.co',
+      'sb_publishable_iMt3G9iAvXawW3QN6vGWjw_BOw8qLFK'
+    );
+
+    const msg = document.getElementById('msg');
+
+    async function checkSession() {
+      const { data } = await supabase.auth.getSession();
+      if (data.session) window.location.href = './admin.html';
+    }
+    checkSession();
+
+    document.getElementById('loginBtn').addEventListener('click', async () => {
+      msg.textContent = '';
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) { msg.textContent = error.message; msg.className = 'mt-4 text-sm text-red-300'; return; }
+      window.location.href = './admin.html';
+    });
+
+    document.getElementById('signupBtn').addEventListener('click', async () => {
+      msg.textContent = '';
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const { error } = await supabase.auth.signUp({ email, password });
+      if (error) { msg.textContent = error.message; msg.className = 'mt-4 text-sm text-red-300'; return; }
+      msg.textContent = 'تم إنشاء الحساب. إذا كان تأكيد البريد مفعلًا، افتح بريدك ثم سجل الدخول.';
+      msg.className = 'mt-4 text-sm text-emerald-300';
+    });
+  </script>
+</body>
+</html>

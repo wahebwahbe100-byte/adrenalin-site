@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة التحكم</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white p-4 md:p-8">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <h1 class="text-3xl font-black">لوحة التحكم</h1>
+        <p class="text-white/70 mt-2">من هنا تعدل الصور والنصوص</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="index.html" class="px-5 py-3 rounded-2xl bg-white/10 border border-white/10">عرض الموقع</a>
+        <button id="logoutBtn" class="px-5 py-3 rounded-2xl bg-red-600 hover:bg-red-700">تسجيل خروج</button>
+      </div>
+    </div>
+
+    <div id="msg" class="text-sm"></div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="bg-white/10 border border-white/10 rounded-3xl p-6">
+        <h2 class="text-2xl font-black mb-4">تعديل الصور</h2>
+        <div class="space-y-4">
+          <select id="imageName" class="w-full rounded-2xl p-4 bg-slate-900 border border-white/10">
+            <option value="hero-main.jpg">الصورة الرئيسية hero-main.jpg</option>
+            <option value="tree-tent.jpg">tree-tent.jpg</option>
+            <option value="buy-tree-tent.jpg">buy-tree-tent.jpg</option>
+            <option value="sup.jpg">sup.jpg</option>
+            <option value="snow.jpg">snow.jpg</option>
+            <option value="students.jpg">students.jpg</option>
+            <option value="snowshoe.jpg">snowshoe.jpg</option>
+            <option value="canoe.jpg">canoe.jpg</option>
+            <option value="jungle.jpg">jungle.jpg</option>
+            <option value="logo.png">logo.png</option>
+          </select>
+          <input id="imageFile" type="file" accept="image/*" class="w-full rounded-2xl p-4 bg-slate-900 border border-white/10">
+          <button id="uploadBtn" class="w-full rounded-2xl p-4 bg-lime-500 hover:bg-lime-600 font-bold">رفع / استبدال الصورة</button>
+          <img id="preview" class="w-full h-72 object-cover rounded-2xl hidden" alt="preview">
+        </div>
+      </div>
+
+      <div class="bg-white/10 border border-white/10 rounded-3xl p-6">
+        <h2 class="text-2xl font-black mb-4">تعديل النصوص</h2>
+        <div class="space-y-4">
+          <select id="contentKey" class="w-full rounded-2xl p-4 bg-slate-900 border border-white/10">
+            <option value="brand_name">اسم العلامة</option>
+            <option value="brand_tagline">السطر الصغير تحت الاسم</option>
+            <option value="hero_title">عنوان الصفحة الرئيسية</option>
+            <option value="hero_text">وصف الصفحة الرئيسية</option>
+            <option value="business_title">عنوان قسم الشركات</option>
+            <option value="business_text">نص قسم الشركات</option>
+            <option value="about_title">عنوان من نحن</option>
+            <option value="about_text">نص من نحن</option>
+            <option value="contact_title">عنوان التواصل</option>
+            <option value="contact_text">نص التواصل</option>
+            <option value="contact_email">الإيميل</option>
+            <option value="contact_phone">الهاتف</option>
+            <option value="contact_address">العنوان</option>
+          </select>
+          <textarea id="contentValue" rows="8" class="w-full rounded-2xl p-4 bg-slate-900 border border-white/10" placeholder="اكتب النص الجديد هنا"></textarea>
+          <button id="saveTextBtn" class="w-full rounded-2xl p-4 bg-sky-600 hover:bg-sky-700 font-bold">حفظ النص</button>
+          <button id="loadTextBtn" class="w-full rounded-2xl p-4 bg-white/10 border border-white/10 font-bold">عرض النص الحالي</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white/10 border border-white/10 rounded-3xl p-6">
+      <h2 class="text-2xl font-black mb-4">خطوة مهمة جدًا قبل التشغيل</h2>
+      <p class="text-white/80 leading-8">
+        افتح Supabase ثم SQL Editor ونفذ ملف <strong>supabase-setup.sql</strong> مرة واحدة فقط.
+        بعد ذلك ستعمل النصوص والصور من لوحة التحكم.
+      </p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+    const supabase = createClient(
+      'https://beyxyvibqzhtyawqrhbv.supabase.co',
+      'sb_publishable_iMt3G9iAvXawW3QN6vGWjw_BOw8qLFK'
+    );
+
+    const msg = document.getElementById('msg');
+    const preview = document.getElementById('preview');
+
+    async function requireLogin() {
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) window.location.href = './login.html';
+    }
+    requireLogin();
+
+    function showMessage(text, ok = true) {
+      msg.textContent = text;
+      msg.className = ok ? 'text-sm text-emerald-300' : 'text-sm text-red-300';
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await supabase.auth.signOut();
+      window.location.href = './login.html';
+    });
+
+    document.getElementById('uploadBtn').addEventListener('click', async () => {
+      const file = document.getElementById('imageFile').files[0];
+      const fileName = document.getElementById('imageName').value;
+      if (!file) return showMessage('اختر صورة أولاً', false);
+
+      const { error } = await supabase.storage.from('site-images').upload(fileName, file, {
+        upsert: true,
+        contentType: file.type
+      });
+      if (error) return showMessage(error.message, false);
+
+      const { data } = supabase.storage.from('site-images').getPublicUrl(fileName);
+      preview.src = data.publicUrl + '?t=' + Date.now();
+      preview.classList.remove('hidden');
+      showMessage('تم رفع الصورة بنجاح');
+    });
+
+    async function loadCurrentText() {
+      const key = document.getElementById('contentKey').value;
+      const { data, error } = await supabase.from('site_content').select('content_value').eq('content_key', key).maybeSingle();
+      if (error) return showMessage(error.message, false);
+      document.getElementById('contentValue').value = data?.content_value || '';
+      showMessage('تم تحميل النص الحالي');
+    }
+
+    document.getElementById('loadTextBtn').addEventListener('click', loadCurrentText);
+    document.getElementById('contentKey').addEventListener('change', loadCurrentText);
+
+    document.getElementById('saveTextBtn').addEventListener('click', async () => {
+      const content_key = document.getElementById('contentKey').value;
+      const content_value = document.getElementById('contentValue').value;
+      const { error } = await supabase.from('site_content').upsert({ content_key, content_value }, { onConflict: 'content_key' });
+      if (error) return showMessage(error.message, false);
+      showMessage('تم حفظ النص بنجاح');
+    });
+
+    loadCurrentText();
+  </script>
+</body>
+</html>
